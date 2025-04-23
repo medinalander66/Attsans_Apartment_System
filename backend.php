@@ -291,7 +291,14 @@ if (isset($_GET['action'])) {
                 $result = $propertyManager->fetchAllRooms();
                 echo json_encode($result['success'] ? $result['rooms'] : ['error' => $result['error']]);
         break;
-                
+        
+        case 'submit_inquiry':
+            if (isset($_POST['property_id'])) {
+                $propertyManager->submitInquiry($_SESSION['user_id']);
+            } else {
+                echo json_encode(["error" => "Property ID not provided"]);
+            }
+            break;
             
 
         default:
