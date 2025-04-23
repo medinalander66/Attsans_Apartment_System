@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Dropdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Horizontal menu */
+        .category-menu {
+            display: flex;
+            justify-content: center;
+            background: #009dff;
+            padding: 15px;
+            gap: 20px;
+        }
+
+        /* Parent category */
+        .category {
+            position: relative;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        /* Dropdown (hidden by default) */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .dropdown a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 8px;
+        }
+
+        .dropdown a:hover {
+            background: #f0f0f0;
+        }
+
+        /* Show dropdown on hover */
+        .category:hover .dropdown {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="category-menu">
+        <div class="category">
+            🏡 Stays
+            <div class="dropdown">
+                <a href="#">Apartments</a>
+                <a href="#">Houses</a>
+                <a href="#">Villas</a>
+            </div>
+        </div>
+        <div class="category">
+            🌿 Unique Stays
+            <div class="dropdown">
+                <a href="#">Treehouses</a>
+                <a href="#">Houseboats</a>
+                <a href="#">Cave Homes</a>
+            </div>
+        </div>
+        <div class="category">
+            🏖️ Beachfront
+            <div class="dropdown">
+                <a href="#">Luxury Villas</a>
+                <a href="#">Resorts</a>
+                <a href="#">Private Islands</a>
+            </div>
+        </div>
+    </nav>
+
+</body>
+</html>

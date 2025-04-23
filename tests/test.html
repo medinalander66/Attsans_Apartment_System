@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Booking Calendar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+        .booked-dates {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Booking System (Built-in Calendar)</h1>
+
+    <div class="container">
+        <label>Check-in:</label>
+        <input type="date" id="check-in">
+        
+        <label>Check-out:</label>
+        <input type="date" id="check-out">
+        
+        <button onclick="bookNow()">Book Now</button>
+        
+        <p id="statusMessage"></p>
+        <p class="booked-dates">Booked Dates: <span id="bookedDatesList">None</span></p>
+    </div>
+
+    <script>
+        let bookedDates = ["2025-03-09", "2025-03-10"]; // Example booked dates
+
+        function bookNow() {
+            let checkIn = document.getElementById("check-in").value;
+            let checkOut = document.getElementById("check-out").value;
+            let statusMessage = document.getElementById("statusMessage");
+            let bookedList = document.getElementById("bookedDatesList");
+
+            if (!checkIn || !checkOut) {
+                statusMessage.innerHTML = "<span style='color: red;'>Please select valid check-in and check-out dates!</span>";
+                return;
+            }
+
+            let startDate = new Date(checkIn);
+            let endDate = new Date(checkOut);
+            let conflict = bookedDates.some(date => {
+                let bookedDate = new Date(date);
+                return bookedDate >= startDate && bookedDate <= endDate;
+            });
+
+            if (conflict) {
+                statusMessage.innerHTML = "<span style='color: red;'>Selected dates conflict with booked dates!</span>";
+                return;
+            }
+
+            // Add new booked dates
+            let newDates = [];
+            while (startDate <= endDate) {
+                newDates.push(startDate.toISOString().split("T")[0]);
+                startDate.setDate(startDate.getDate() + 1);
+            }
+
+            bookedDates.push(...newDates);
+            bookedList.textContent = bookedDates.join(", ");
+            statusMessage.innerHTML = "<span style='color: green;'>Booking successful!</span>";
+        }
+    </script>
+
+</body>
+</html>
+
+

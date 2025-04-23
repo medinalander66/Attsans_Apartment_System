@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attsans Apartment</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body id="signup-page" data-page="signup-page">
+    <header>
+        <a href="index.html"> <img class="logo-icon" src="./images/echo-icon.svg" alt="RoomLink Logo"></a>
+        <a href="index.html"><h1 class="logo-text"><span class="logo-text1">Attsans</span> <span class="logo-text2">Apartment</span></h1></a>
+    
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="propertiesSection.html">Rooms</a>
+            <div class="dropdown">
+              <div class="dropdown-menu">
+                <img src="./images/menu.png">
+              </div>
+              <ul class="dropdown-menu-content">
+                <li id="menu-content-1"><a href="index.html" >Login</a></li>
+                <li id="menu-content-2"><a href="Customer_Support.HTML" >Customer Support</a></li>
+                <li id="menu-content-3"><a href="Privacy_Policy.HTML" >Privacy Policy</a></li>
+              </ul>
+        </div>
+      </header>
+    <main>
+        <div class="signup-container">
+            <h3>Create an Account</h3>
+            <form id="signup-details" method="POST">
+                <input name="first_name" type="text" placeholder="First Name" required>
+                <input name="last_name" type="text" placeholder="Last Name" required>
+                <input name="username" type="text" placeholder="Username" required>
+                <input name="email" type="email" placeholder="Email" required>
+                <input name="password" type="password" placeholder="Password" required>
+                <input name="confirm_password" type="password" placeholder="Confirm Password" required>
+                <input name="phone_number" type="tel" placeholder="Phone Number " required>
+                <input name="dob" type="date" placeholder="Date of Birth" required>
+                <div id="error-message" style="color: red; display: none;"></div>
+                    <label>
+                    <input type="checkbox" name="agreed_terms" required> I agree to the <a href="terms.html" id="terms-link">Terms & Conditions</a>
+                    </label>
+
+                <div id="terms-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2 id="TermHeader">RoomLink Terms and Conditions</h2>
+                        <div id="terms-content"></div>
+                        <input type="checkbox" id="agreeCheckbox"> I agree to the Terms and Conditions
+                        <br><br>
+                        <button id="acceptBtn" disabled>Accept</button>
+                    </div>
+                </div>
+                <button class="btn" type="submit" name="action" value="signup" >Sign Up</button>
+
+                </form>
+            <div class="links">
+                Already have an account? <a href="index.html">Log in</a>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+          <!-- LEGAL Column -->
+          <div class="footer-column">
+          <h3 class="footer-heading">LEGAL</h3>
+          <hr>
+          <ul class="footer-links">
+              <li><a href="Privacy_Policy.HTML">Privacy Policy</a></li>
+          </ul>
+          </div>
+          
+          <!-- SUPPORT Column -->
+          <div class="footer-column">
+          <h3 class="footer-heading">SUPPORT</h3>
+          <hr>
+          <ul class="footer-links">
+              <li><a href="Customer_Support.HTML">Customer Support</a></li>
+          </ul>
+          </div>
+      </div>
+      <p class="footer-bottom">&copy; 2025 Attsans Apartment. All rights reserved.</p>
+      </footer>
+      <script type="module" src="js/app.js"></script>
+</body>
+</html>
+
+
+
+    
+
+

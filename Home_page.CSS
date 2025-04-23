@@ -1,0 +1,237 @@
+nav{
+  position:sticky;
+}
+.logo-text name { 
+    font-size: 36px;
+    font-weight: bold;
+    cursor:pointer
+}
+.image-container {
+  width: 1980px;       /* Adjust size */
+  height: 700px;
+  margin: 0 auto 50px; /* Centers image and adds space below */
+  overflow: hidden;   /* Ensures image stays within bounds */
+  position:relative;
+  }
+
+
+@keyframes slideShow {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    33% { opacity: 1; }
+    43% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: slideShow 21s infinite; /* 7s per image × 3 */
+  }
+  
+  .slide:nth-child(1) { animation-delay: 0s; }
+  .slide:nth-child(2) { animation-delay: 7s; }
+  .slide:nth-child(3) { animation-delay: 14s; }
+  
+  
+  .about-container {
+    max-width: 800px;
+    margin-bottom: 150px;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 60px;
+    padding: 10px;
+    border: 2px solid rgb(6, 106, 146);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .about-header {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 25px;
+    text-align: center;
+  }
+  
+  .about-text {
+    color: #022758;
+    line-height: 1.6;
+    font-size: 16px;
+    font-family: "Fredoka" ,sans-serif;
+    text-align: left;
+    text-shadow:
+    2px 2px 0px #77C5FC, 
+    1.5px 1.5px 0px #009DFF;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(6, 147, 175);
+    position: relative; /* Important for z-index */
+    z-index: 100;
+}
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 120px;
+    border-radius: 4px;
+    transition: color 0.3s;
+}
+.login-button:hover {
+    background-color: white;
+}
+
+.nav-link:hover {
+    color: #ddd;
+    text-decoration: underline;
+}
+
+
+.logo-text .link-part name{
+    color: rgb(6, 106, 146); /* "Link" text remains white */
+    font-family: "Fredoka",sans-serif;
+    text-shadow:
+        3px 3px 0px #77C5FC, 
+        9px 9px 0px #009DFF;
+}
+.logo-text .room-part name {
+    color: rgb(255, 255, 255); /* "Room" text color */
+    font-family: "Fredoka",sans-serif;
+    text-shadow: 
+        3px 3px 0px #77C5FC, 
+        9px 9px 0px #009DFF;
+}
+
+.ellipses-container {
+    display: flex;
+    justify-content: center; /* Centers ellipses horizontally */
+    align-items: center;
+    gap: 30px; /* Space between ellipses */
+    padding: 0px;
+    background: none; /* Optional: light background */
+  }
+  
+  /* Base ellipse style */
+  .ellipse {
+    width: 280px; /* Width of each ellipse */
+    height: 380px; /* Height to create oval shape */
+    border-radius: 50% / 60%; /* Makes it elliptical (not a  circle) */
+    background: white;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+  
+  /* Customize individual ellipses (optional) */
+  .ellipse-1 {
+    border: 5px solid #FFD166; /* Yellow border for ellipse 1 */
+  }
+  
+  .ellipse-2 {
+    border: 5px solid #02eaac; /* Green border for ellipse 2 */
+  }
+  
+  .ellipse-3 {
+    border: 5px solid #118AB2; /* Blue border for ellipse 3 */
+  }
+  
+  /* Text styling */
+  .ellipse h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #000000;
+    font-family: Arial;
+    font-weight: bold;
+  }
+  
+  .ellipse p {
+    font-size: 1.15em;
+    color: #000000;
+    line-height: 1.20;
+    font-family: sans-serif;
+    font-weight: lighter;
+  }
+  .site-footer {
+    background-color: #087df3;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 0 15px 30px;
+  }
+  
+  .footer-heading {
+    color: #000000;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #0490a9;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #00d9ff;
+    text-decoration: underline;
+  }
+  
+
+  @media (max-width: 768px) {
+    .content-row {
+      flex-direction: column;
+    }
+  }
+
+
+.ellipsis {
+    white-space: nowrap;      /* Prevent text from wrapping */
+    overflow: hidden;         /* Hide overflow */
+    text-overflow: ellipsis;  /* Add ellipsis */
+    width: 100%;             /* Required for the effect */
+  }

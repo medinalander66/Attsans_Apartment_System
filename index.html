@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attsans Apartment</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body id="login-page" data-page="login-page">
+    <header>
+        <a href="index.html"> <img class="logo-icon" src="./images/echo-icon.svg" alt="RoomLink Logo"></a>
+        <a href="index.html"><h1 class="logo-text"><span class="logo-text1">Attsans</span> <span class="logo-text2">Apartment</span></h1></a>
+    
+        <div class="nav-links">
+            <a href="Home_Page.html">Home</a>
+            <a href="How_it_works.HTML">About</a>
+            <a href="propertiesSection.html">Rooms</a>
+            <div class="dropdown">
+              <div class="dropdown-menu">
+                <img src="./images/menu.png">
+              </div>
+              <ul class="dropdown-menu-content">
+                <li id="menu-content-1"><a href="signup.html" >Create an Account</a></li>
+                <li id="menu-content-2"><a href="Customer_Support.HTML" >Customer Support</a></li>
+                <li id="menu-content-3"><a href="Privacy_Policy.HTML">Privacy Policy</a></li>
+              </ul>
+        </div>
+      </header>
+    <main>
+        <div class="login-container">
+            <h4>Login or Sign up</h4>
+            <hr>
+            <h3 id="p1">Welcome to Attsans Apartment</h3>
+            <form id="login-form" method="POST">
+                <input type="hidden" name="action" value="login">
+                <input id="username" type="text" name="username_email" placeholder="Username or Email" >
+                <input id="password" type="password" name="password" placeholder="Password" >
+                <div id="error-message" style="color: red; display: none;"></div>
+                <button id="btnLogin" class="btnLogin" name="action" value="login">Login</button>
+                <p id="signup-success-msg" style="display: none; color: green; text-align: center; font-size: 14px; margin-top: 10px; font-weight: bold;">
+                  You have successfully created your account. Please login.
+                </p>
+                <p id="p2">or</p>
+                <button class="btnSignup" onclick="window.location.href='signup.html'; return false;">Sign Up</button>
+            </form>
+            <div class="links">
+                <a id="login_forgotpassword" href="login_forgotpassword.html">Forgot Password?</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+          <!-- LEGAL Column -->
+          <div class="footer-column">
+          <h3 class="footer-heading">LEGAL</h3>
+          <hr>
+          <ul class="footer-links">
+              <li><a href="Privacy_Policy.HTML">Privacy Policy</a></li>
+          </ul>
+          </div>
+          
+          <!-- SUPPORT Column -->
+          <div class="footer-column">
+          <h3 class="footer-heading">SUPPORT</h3>
+          <hr>
+          <ul class="footer-links">
+              <li><a href="Customer_Support.HTML">Customer Support</a></li>
+          </ul>
+          </div>
+      </div>
+      <p class="footer-bottom">&copy; 2025 Attsans Apartment. All rights reserved.</p>
+      </footer>
+      
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
+

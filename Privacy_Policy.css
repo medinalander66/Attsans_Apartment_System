@@ -1,0 +1,57 @@
+.about-container {
+    max-width: 800px;
+    margin-bottom: 150px;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 60px;
+    padding: 10px;
+    border: 2px solid rgb(6, 106, 146);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur effect */
+     
+  }
+  
+  .about-header {
+    color: #000000;
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 25px;
+    text-align: center;
+  }
+  
+  .about-text {
+    color: #000000;
+    line-height: 1.6;
+    font-size: 16px;
+    font-family: "Fredoka" ,sans-serif;
+    text-align: left;
+    text-shadow:
+    2px 2px 0px #77C5FC, 
+    1.5px 1.5px 0px #009DFF;
+  }
+
+.privacy-policy {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin-top: 15 rem; /* Adds space below the navbar */
+  }
+  
+  .privacy-policy h2 {
+    color: #000000;
+    border-bottom: 1px solid #064313;
+    padding-bottom: 10px;
+  }
+  
+  .privacy-policy strong {
+    color: #000000;
+  }
+  
+  .privacy-policy ul {
+    padding-left: 20px;
+  }

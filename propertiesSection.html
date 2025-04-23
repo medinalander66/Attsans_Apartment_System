@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Attsans Apartment</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body class="body-properties" data-page="properties-section-page">
+
+  <header>
+    <a href="propertiesSection.html"> <img class="logo-icon" src="./images/echo-icon.svg" alt="RoomLink Logo"></a>
+    <a href="propertiesSection.html"><h1 class="logo-text"><span class="logo-text1">Attsans</span> <span class="logo-text2">Apartment</span></h1></a>
+
+    <div class="nav-links">
+        <a href="Home_Page.html">Home</a>
+        <a href="How_it_works.HTML">About</a>
+        <a href="propertiesSection.html">Rooms</a>
+        <div class="dropdown">
+          <div class="dropdown-menu">
+            <img src="./images/menu.png">
+          </div>
+          <ul class="dropdown-menu-content">
+            <li id = "menu-content-1"><a href="index.html" >Login</a></li>
+            <li id="menu-content-2"><a href="signup.html" >Create an Account</a></li>
+            <li id="menu-content-3"><a href="Customer_Support.HTML" >Customer Support</a></li>
+            <li id="menu-content-3"><a href="Privacy_Policy.HTML">Privacy Policy</a></li>
+          </ul>
+    </div>
+  </header>
+<div class="wrapper">
+  <main>
+  <!-- Search and Filter -->
+  <div class="search-filter-container-properties">
+    <div class="search-filter-box-properties">
+      <input 
+        type="text" 
+        placeholder="Search by room number, type..." 
+        class="search-input-properties"
+        id="searchInput"
+        />
+      <!-- Filter button with dropdown -->
+      <div class="dropdown">
+        <button class="filter-button-properties">Filter</button>
+        <ul class="dropdown-content">
+          <li><a href="#" data-filter="All">All</a></li>
+          <li><a href="#" data-filter="Solo">Solo</a></li>
+          <li><a href="#" data-filter="Double">Double</a></li>
+          <li><a href="#" data-filter="Group">Group</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="room-grid-properties" id="roomContainer">
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Fetch rooms from the server
+        fetch('backend.php?action=fetch_rooms')
+          .then(response => response.json())
+          .then(data => {
+            const container = document.getElementById("roomContainer");
+            const searchInput = document.getElementById("searchInput");
+
+            if (data.error) {
+              container.innerHTML = `<p>Error loading rooms: ${data.error}</p>`;
+              return;
+            }
+
+            // Function to display rooms
+            function displayRooms(filteredRooms = data) {
+              container.innerHTML = ''; // Clear existing cards
+              filteredRooms.forEach(room => {
+                const card = document.createElement("div");
+                card.className = "room-card-properties";
+                card.dataset.room = room.room_number;
+
+                card.innerHTML = `
+                  <div class="room-img-placeholder-properties">
+                    <img src="Images/rooms/${room.room_image}" alt="Room Image">
+                  </div>
+                  <h2 class="room-title-properties">Room ${room.room_number}</h2>
+                  <p class="room-detail-properties">Capacity: ${room.room_capacity}</p>
+                  <p class="room-detail-properties">Type: ${room.room_type}</p>
+                  <p class="room-detail-properties">Rate: ₱${room.room_rate}</p>
+                  <a class="room-button-properties" href="propertyPage.html?id=${room.property_id}">View Details</a>
+                `;
+                container.appendChild(card);
+              });
+            }
+
+            // Display all rooms initially
+            displayRooms();
+
+            // Add event listener for dropdown filter links
+            const filterLinks = document.querySelectorAll('.dropdown-content a');
+            filterLinks.forEach(link => {
+              link.addEventListener('click', (e) => {
+                const filterValue = e.target.dataset.filter;
+
+                if (filterValue === "All") {
+                  // If "All" is selected, display all rooms
+                  displayRooms();
+                } else {
+                  // Filter rooms by selected room type
+                  const filteredRooms = data.filter(room => room.room_type === filterValue);
+                  displayRooms(filteredRooms);
+                }
+              });
+            });
+
+            // Add event listener to search box
+            searchInput.addEventListener('input', () => {
+              const searchTerm = searchInput.value.toLowerCase();
+
+              // Filter rooms based on search input
+              const filteredRooms = data.filter(room => {
+                return (
+                  room.room_number.toString().toLowerCase().includes(searchTerm) || // Match by room number
+                  room.room_type.toLowerCase().includes(searchTerm) // Match by room type
+                );
+              });
+
+              // Display the filtered rooms
+              displayRooms(filteredRooms);
+            });
+          })
+          .catch(error => {
+            document.getElementById("roomContainer").innerHTML = `<p>Failed to load rooms.</p>`;
+            
+          });
+      });
+
+    </script>
+
+  </div>
+</main>
+  <footer class="footer">
+    <div class="footer-container">
+        <!-- LEGAL Column -->
+        <div class="footer-column">
+        <h3 class="footer-heading">LEGAL</h3>
+        <hr>
+        <ul class="footer-links">
+            <li><a href="Privacy_Policy.HTML">Privacy Policy</a></li>
+        </ul>
+        </div>
+        
+        <!-- SUPPORT Column -->
+        <div class="footer-column">
+        <h3 class="footer-heading">SUPPORT</h3>
+        <hr>
+        <ul class="footer-links">
+            <li><a href="Customer_Support.HTML">Customer Support</a></li>
+        </ul>
+        </div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 Attsans Apartment. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>
+
+<script type="module" src="js/app.js"></script>

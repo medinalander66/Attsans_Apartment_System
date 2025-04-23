@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+        .sidebar { width: 250px; height: 100vh; background: #333; color: white; position: fixed; padding: 20px; }
+        .sidebar h2 { text-align: center; }
+        .sidebar a { display: block; color: white; text-decoration: none; padding: 10px; margin-top: 10px; background: #444; }
+        .sidebar a:hover { background: #555; }
+        .main-content { margin-left: 270px; padding: 20px; }
+        .dashboard-cards { display: flex; gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); flex: 1; }
+        table { width: 100%; border-collapse: collapse; background: white; margin-top: 20px; }
+        table, th, td { border: 1px solid #ddd; padding: 10px; }
+        th { background: #555; color: white; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Dashboard</h2>
+        <a href="#">Dashboard</a>
+        <a href="#">Users</a>
+        <a href="#">Properties</a>
+        <a href="#">Bookings</a>
+        <a href="#">Reports</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Welcome, Admin</h1>
+        <div class="dashboard-cards">
+            <div class="card">Total Users: 100</div>
+            <div class="card">Total Properties: 50</div>
+            <div class="card">Total Revenue: $10,000</div>
+        </div>
+        
+        <h2>Recent Bookings</h2>
+        <table>
+            <tr>
+                <th>Customer</th>
+                <th>Property</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>Luxury Apartment</td>
+                <td>Booked</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>Beach House</td>
+                <td>Pending</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

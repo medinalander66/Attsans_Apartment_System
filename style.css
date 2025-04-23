@@ -1,0 +1,121 @@
+/* Same general styles as before */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+header {
+  background: #009dff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+
+
+/* Update grid for new layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  grid-template-rows: auto auto;
+}
+
+.box {
+  background: white;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.room-box, .requirements-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.room-image {
+  width: 100%;
+  height: 100px;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.login-box {
+  grid-column: span 2;
+  text-align: center;
+}
+
+.login-box input {
+  margin-bottom: 10px;
+}
+
+.btn {
+  background-color: #00aeff;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-dark {
+  background-color: #333;
+  color: white;
+}
+
+.google {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.google img {
+  width: 20px;
+}
+
+a {
+  color: #00aeff;
+  text-decoration: none;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+

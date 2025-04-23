@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attsans Apartment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="adminHeader">
+        <h2><span>Welcome, </span><span class="username">user</span></h2>
+    </header>
+    <div class="sidebar">
+        <h1 id="sidebarTitle">Admin Panel</h1>
+        <ul >
+            <li><a href="adminDashboard.html">Dashboard</a>
+            <li><a href="adminRooms.html">Rooms</a>
+            <li><a href="adminUsers.html">Users</a>
+            <li><a href="adminInquiries.html">Inquires</a>
+            <li><a href="adminIDValidations.html">ID Validations</a>
+            <li id="sidebarLogout"><a href="">Logout</a>
+        </ul>
+    </div>
+
+    <div class="room-table-container">
+        <h2>Tenant Inquiries</h2>
+        <table class="room-table">
+            <thead>
+                <tr>
+                    <th>Inquiry ID</th>
+                    <th>Tenant Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Lander Medina</td>
+                    <td>medinalander66@gmail.com</td>
+                    <td>Payment Inquiry</td>
+                    <td><button class="view-message-btn" onclick="showMessage('Can I pay via GCash this month?')">View</button></td>                    <td>2025-04-13</td>
+                    <td>Pending</td>
+                    <td>
+                        <button class="edit-btn">Mark as Read</button>
+                        <button class="delete-btn">Delete</button>
+                    </td>
+                </tr>
+                <!-- more inquiry rows here -->
+            </tbody>
+        </table>
+    </div>
+    <div id="messageModal" class="modal-users">
+        <div class="modal-content-users">
+            <span class="close-btn-users" onclick="closeModal()">&times;</span>
+            <h3>Inquiry Message</h3>
+            <p id="modalMessageText"></p>
+        </div>
+    </div>
+
+
+    <!-- Logout Modal -->
+        <div id="logoutModal" class="modal-logout">
+            <div class="modal-content-logout">
+            <h3>Are you sure you want to logout?</h3>
+            <div class="modal-actions">
+                <button class="yes-btn" onclick="confirmLogout()">Yes</button>
+                <button class="cancel-btn" onclick="closeLogoutModal()">Cancel</button>
+            </div>
+            </div>
+        </div>
+</body>
+</html>
+
+<script src="app.js"></script>
+
+</script>

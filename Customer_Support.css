@@ -1,0 +1,49 @@
+.logo-text name { 
+    font-size: 36px;
+    font-weight: bold;
+    cursor:pointer
+}
+
+.logo-text .link-part name{
+    color: rgb(6, 106, 146); /* "Link" text remains white */
+    font-family: "Fredoka",sans-serif;
+    text-shadow:
+        3px 3px 0px #77C5FC, 
+        9px 9px 0px #009DFF;
+}
+.logo-text .room-part name {
+    color: rgb(255, 255, 255); /* "Room" text color */
+    font-family: "Fredoka",sans-serif;
+    text-shadow: 
+        3px 3px 0px #77C5FC, 
+        9px 9px 0px #009DFF;
+}
+
+.contact-card p{
+    color:white;
+}
+.about-container {
+    max-width: 1000px;
+    margin-bottom: 150px;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 60px;
+    padding: 10px;
+    box-shadow: 120px 50px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .about-header {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 25px;
+    text-align: center;
+  }
+
+body{
+    background-color: rgb(250, 248, 248);
+    color:rgb(0, 0, 0);
+}   

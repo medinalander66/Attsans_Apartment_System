@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attsans Apartment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="adminHeader">
+        <h2><span>Welcome, </span><span class="username">user</span></h2>
+    </header>
+    <div class="sidebar">
+        <h1 id="sidebarTitle">Admin Panel</h1>
+        <ul >
+            <li><a href="adminDashboard.html">Dashboard</a>
+            <li><a href="adminRooms.html">Rooms</a>
+            <li><a href="adminUsers.html">Users</a>
+            <li><a href="adminInquiries.html">Inquires</a>
+            <li><a href="adminIDValidations.html">ID Validations</a>
+            <li id="sidebarLogout"><a href="">Logout</a>
+        </ul>
+    </div>
+
+    <div class="room-table-container">
+        <h2>Users List</h2>
+        <table class="room-table">
+            <thead>
+                <tr>
+                  <th>User ID</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Birthdate</th>
+                  <th>Role</th>
+                  <th>Account Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Lander</td>
+                  <td>Medina</td>
+                  <td>medinalander66</td>
+                  <td>medinalander66@gmail.com</td>
+                  <td>09928830259</td>
+                  <td>2-10-24</td>
+                  <td>Tenant</td>
+                  <td>Active</td>
+                  <td>
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                  </td>
+                </tr>
+                <!-- More rows here -->
+              </tbody>
+            </table>
+      </div>
+
+      <!-- Logout Modal -->
+        <div id="logoutModal" class="modal-logout">
+          <div class="modal-content-logout">
+            <h3>Are you sure you want to logout?</h3>
+            <div class="modal-actions">
+              <button class="yes-btn" onclick="confirmLogout()">Yes</button>
+              <button class="cancel-btn" onclick="closeLogoutModal()">Cancel</button>
+            </div>
+          </div>
+</div>
+</body>
+</html>
+
+<script src="app.js"></script>

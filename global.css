@@ -1,0 +1,53 @@
+header {
+  background: #009dff;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+}
+
+header a {
+text-decoration: none;
+color: inherit;
+}
+
+.logo-icon {
+height: 70px;
+cursor: pointer;
+transition: opacity 0.3s ease;
+}
+
+.logo-text {
+font-size: 36px;
+font-weight: bold;
+cursor:pointer
+}
+
+.logo-text1 {
+color: rgb(255, 255, 255); /* "Room" text color */
+font-family: "Fredoka",sans-serif;
+text-shadow: 
+  3px 3px 0px #77C5FC, 
+  9px 9px 0px #009DFF;
+}
+
+.logo-text2 {
+color: rgb(6, 106, 146); /* "Link" text remains white */
+font-family: "Fredoka",sans-serif;
+text-shadow:
+  3px 3px 0px #77C5FC, 
+  9px 9px 0px #009DFF;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: 600;
+}
